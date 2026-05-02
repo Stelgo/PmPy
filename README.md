@@ -1,7 +1,7 @@
-## Welcome to ==PmPy== aka. Password manger python... (still working on a better name)
+## Welcome to PmPy aka. Password manger python... (still working on a better name)
 ---
 ## WARNING:
-This a ==work in progress==
+This a **work in progress**
 
 ---
 
