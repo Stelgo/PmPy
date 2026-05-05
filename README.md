@@ -20,6 +20,7 @@ It's simple really. It's a python password manager using Cryptography python lib
 | GET [args] | Shows a specific login |
 |SAVE| Saves the cache directory|
 |NEW | Initializes prompt for new login |
+|DELETE [args]| Deletes specfied "profile" (Username password combo)|
 
 ### Goals
 
