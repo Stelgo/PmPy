@@ -1,15 +1,3 @@
-#============================#
-#     TODO:
-#  - Finish functions
-# - User interface logic
-# - file saving ✓
-# - Auth system
-#  
-#============================#
-
-
-
-
 from cryptography.fernet import Fernet, InvalidToken
 import json , time
 #Vars:
