@@ -17,9 +17,10 @@ It's simple really. It's a python password manager using Cryptography python lib
 | Syntax | Description |
 | ----------- | ----------- |
 | SHOW | Shows all stored passwords |
-| GET [args] | Shows a specific login |
-|SAVE| Saves the cache directory|
+| GET | Shows a specific login |
+|SAVE | Saves the temporary directory|
 |NEW | Initializes prompt for new login |
+|DELETE | Deletes specfied "profile" (Username password combo)|
 
 ### Goals
 
