@@ -25,7 +25,7 @@ It's simple really. It's a python password manager using Cryptography python lib
 ### Goals
 
 - [x] Save passwords in a file (.txt, .json, .sql , etc.)
-- [ ] Be able to run this a binary (.exe and .app (for MacOS) )
+- [ ] Be able to run this as a binary (.exe and .app (for MacOS) )
 - [ ] More security features.
 - [x] And make the syntax applicable, as it doesn't work nor have an interface
   for it  yet
