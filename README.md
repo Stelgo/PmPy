@@ -1,10 +1,13 @@
-# The release kinda works.
+## Welcome to PmPy aka. Password manger python... (still working on a better name)
+
+### Updates:
+- The saving feature doesn't work, yet. Will fix it in the future.
+- Fixed other errors :) .
+
+
 > [!IMPORTANT]
 > The counting feature has been removed, duplicate profiles will be delted with the
 > latest profile being kept while the oldest delted.
-
-
-## Welcome to PmPy aka. Password manger python... (still working on a better name)
 
 > [!WARNING]
 > This is in **Alpha**
