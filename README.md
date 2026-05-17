@@ -38,3 +38,8 @@ It's simple really. It's a python password manager using Cryptography python lib
 - [x] And make the syntax applicable, as it doesn't work nor have an interface
   for it  yet
 
+## License
+
+This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
+
+Copyright © 2026 Constantinos Philiastides
