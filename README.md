@@ -1,6 +1,7 @@
-# THE RELEASE DOESN'T WORK YET. 
-> [!WARNING]
-> The release doen't work, upon further inspection I have a problem with the counting. The code counts upwards for each new profile, to remember the count it save it in a   > txt file. And that as of now doesn't work. You will be notified when this is worked out but for this week it is going to be left broken.
+# The release kinda works.
+> [!INFO]
+> The counting feature has been removed, duplicate profiles will be delted with the
+> latest profile being kept while the oldest delted.
 
 
 ## Welcome to PmPy aka. Password manger python... (still working on a better name)
@@ -23,10 +24,11 @@ It's simple really. It's a python password manager using Cryptography python lib
 |SAVE | Saves the temporary directory|
 |NEW | Initializes prompt for new login |
 |DELETE | Deletes specfied "profile" (Username password combo)|
+|EXIT | Quits the program without saving the un-saved profiles|
 
 ### Goals
 
-- [x] Save passwords in a file (.txt, .json, .sql , etc.)
+- [ ] Save passwords in a file (.txt, .json, .sql , etc.)
 - [x] Be able to run this as a binary (.exe)
 - [ ] MacOS support (for .app) has not been finished yet. 
 - [ ] More security features.
