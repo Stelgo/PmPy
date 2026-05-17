@@ -1,5 +1,5 @@
 # The release kinda works.
-> [!INFO]
+> [!IMPORTANT]
 > The counting feature has been removed, duplicate profiles will be delted with the
 > latest profile being kept while the oldest delted.
 
