@@ -10,7 +10,7 @@
 > latest profile being kept while the oldest delted.
 
 > [!WARNING]
-> This is in **Alpha**
+> This project is in **Alpha**
 
 
 ### What can it do
