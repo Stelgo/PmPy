@@ -38,5 +38,3 @@ It's simple really. It's a python password manager using Cryptography python lib
 - [x] And make the syntax applicable, as it doesn't work nor have an interface
   for it  yet
 
-
-The release doen't work, upon further inspection I have a problem with the counting. The code counts upwards for each new profile, to remember the count it save it in a txt file. And that as of now doesn't work. You will be notified when this is worked out but for this week it is going to be left broken.
