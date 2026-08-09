@@ -8,7 +8,7 @@ y = 0
 
 Flag = True 
 
-
+                      
 KEY_PATH = "PasswordManager.key"
 # loads a key or generates a new one if a key is not found
 
@@ -22,7 +22,7 @@ except FileNotFoundError:
 
 f = Fernet(key)
 
-
+#print(f) # debug
 
 
 #======================================#
@@ -37,37 +37,17 @@ def NewProfile(KEY=f):
     PF_Password = NewItemPasswrd
     token = KEY.encrypt(PF_Password.encode('utf-8'))
     PF_Password = token
-    tempdict.update({f"{Profile}" : PF_Password})
+    tempdict[NewItemName] = token.decode("utf-8")
     print("New profile created.")
-    return tempdict
     
+
 def SaveNewProfile():
     global tempdict
-    while True:
-        userinpt = input("Are you sure you want to save? (y / n)")
-        userinpt = userinpt.lower().strip()
-        if userinpt in ("y", "yes"):
-            print("Profile saved.")
-            tempRender = json.dumps(tempdict)
-            with open("PasswordPmPy.json", "a", encoding="utf-8") as File:
-                File.write(json.dumps(tempRender, ensure_ascii=False) + "\n")
-            time.wait(2)
-            break
-        elif userinpt in ("n" , "no"):
-            print("Aborted. (Did not save the file)")
-            break
-        else:
-            print("Wrong input try again")
-            global y
-            y += 1
-            if y == 3:
-                choise = input("Do you want to Abort? (y / n) ")
-                if choise in ("y", "yes"):
-                    y = 0
-                    break
-                elif choise in ("n" , "no"):
-                    y = 0
-                    pass
+    userinpt = input("Are you sure you want to save? (y / n) ").lower().strip()
+    if userinpt in ("y", "yes"):
+        with open("PasswordPmPy.json", "w", encoding="utf-8") as File:
+            json.dump(tempdict, File)
+        print("Profile saved.")
 
 
 def LoadStoredProfiles():
@@ -78,8 +58,8 @@ def LoadStoredProfiles():
                 line = line.strip()
                 if not line:
                     continue
-                obj = json.loads(line)          
-                masterdict.update(obj)        
+                obj = json.loads(line)
+                masterdict = obj
     except FileNotFoundError:
         with open("PasswordPmPy.json", "w", encoding="utf-8") as f:
             f.close()
@@ -89,32 +69,29 @@ def GetProfile():
     global masterdict
     global tempdict
     global f
-    userinpt = input("Enter profile name: ")
-    userinpt = userinpt.strip()
-    print(f"Saved profiles with the name: {userinpt} ")
-    try:
-        UncryptedSaved = masterdict.get(userinpt)
-        temp = f.decrypt(UncryptedSaved)
-        UncryptedSaved = temp
-        print('')
-        print(UncryptedSaved)
-    except TypeError:
-        print('')
-        print(f"No saved profiles with the  name: {userinpt} ")
-    print('')
-    print("-----------------------------------------------------")
-    print('')
-    print(f"Not saved profiles with the name: {userinpt} ")
-    try:
-        UncryptedTemp = tempdict.get(userinpt)
-        temp = f.decrypt(UncryptedTemp)
-        UncryptedTemp = temp
-        print('')
-        print(UncryptedTemp)
-    except TypeError:
-        print('')
-        print(f"No not saved profiles with the  name: {userinpt} ")
-    
+    userinpt = input("Enter profile name: ").strip()
+    print("--------------------------------")
+    if userinpt in tempdict:
+        print(f"There is a profiled named {userinpt} that isn't saved.")
+        DecryptedPass = f.decrypt(tempdict[userinpt].encode("utf-8"))
+        print(DecryptedPass)
+    else:
+        print(f"There isn't a not-saved profile named {userinpt}:")
+    print("----------------------------------------")
+    EncryptedPass = masterdict.get(userinpt)
+    if EncryptedPass == None:
+        print(f"There isn't a saved profile named {userinpt}:")
+    else:
+        print(f"There is a profiled named {userinpt} that is saved.")
+        DecryptedPass = f.decrypt(EncryptedPass)
+        print(f"{DecryptedPass}")
+        
+        
+
+
+
+
+
 def DeleteProfile():
     userinpt = input("Profile to be deleted: ").strip()
     try:

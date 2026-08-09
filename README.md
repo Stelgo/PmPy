@@ -5,18 +5,14 @@
 - Fixed other errors :) .
 
 
-> [!IMPORTANT]
-> The counting feature has been removed, duplicate profiles will be delted with the
-> latest profile being kept while the oldest delted.
 
 > [!WARNING]
-> This project is in **Alpha**
+> This project is still in **Alpha**
 
 
 ### What can it do
 It's simple really. It's a python password manager using Cryptography python library and json library to store passwords and raw python.
-> [!NOTE]
-> More features and libraries will be implemented in the future remember this is a prototype.
+
 ### Syntax
 *Because every project of mine has one these days.*
 
@@ -31,7 +27,7 @@ It's simple really. It's a python password manager using Cryptography python lib
 
 ### Goals
 
-- [ ] Save passwords in a file (.txt, .json, .sql , etc.)
+- [x] Save passwords in a file (.txt, .json, .sql , etc.)
 - [x] Be able to run this as a binary (.exe)
 - [ ] MacOS support (for .app) has not been finished yet. 
 - [ ] More security features.
